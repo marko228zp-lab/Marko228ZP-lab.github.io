@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Інтерактивний словник англійської мови</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Інтерактивний словник англійської мови</h1>
+
+  <div class="controls">
+    <div class="translate-box">
+      <input id="translate-input" placeholder="Введіть слово англійською" aria-label="Слово для перекладу">
+      <button id="translate-btn">Перекласти</button>
+      <select id="lang-select" aria-label="Мова перекладу">
+        <option value="uk">Українська</option>
+        <option value="ru">Російська</option>
+        <option value="es">Іспанська</option>
+      </select>
+      <div id="translate-result" class="result" aria-live="polite"></div>
+    </div>
+
+    <form id="add-word-form" class="add-form" aria-label="Додати слово">
+      <input id="eng-word" placeholder="English word" required>
+      <input id="native-word" placeholder="Переклад" required>
+      <button type="submit">Додати слово</button>
+    </form>
+  </div>
+
+  <div class="dictionary" id="dictionary"></div>
+
+  <template id="card-template">
+    <div class="card">
+      <button class="fav" title="Улюблене" aria-label="Позначити як улюблене">★</button>
+      <h2 class="eng"></h2>
+      <p class="native"></p>
+      <div class="card-actions">
+        <button class="flip">Показати/Приховати переклад</button>
+        <button class="remove">Видалити</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
